@@ -38,8 +38,8 @@ function depthColor(feature) {
 function createFeatures(earthquakeData) {
 
     function onEachFeature(feature, layer) {
-        layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>Magnitude and date/time: 
-        ${feature.properties.mag}, ${new Date(feature.properties.time)}</p>`);
+        layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>Depth: ${feature.geometry.coordinates[2]}, 
+        Magnitude: ${feature.properties.mag}, Date and time: ${new Date(feature.properties.time)}</p>`);
     };
 
     let earthquakes = L.geoJSON(earthquakeData, {
